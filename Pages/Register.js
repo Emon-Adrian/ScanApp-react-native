@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
 import {
     Text,
     View,
@@ -21,6 +21,25 @@ const Register = ({ navigation }) => {
   const [submitted, setSubmitted] = useState(false);
 
   const ClearStorage = () => AsyncStorage.clear();
+
+
+  useEffect(() =>{
+    getData();
+  },[])
+
+
+  const getData = () =>{
+    try{
+      AsyncStorage.getItem('data')
+        .then(value =>{
+          if(value!= null){
+            navigation.navigate('Profile');
+          }
+        })
+    }catch(error){
+    console.log(error)
+    }
+  }
 
   const onRegister = async () => {
       if (name.length  == 0) {

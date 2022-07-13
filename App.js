@@ -36,7 +36,6 @@ const App: () => Node = () => {
           options={{
             headerShown: false,
           }}
-          //options={{ title: 'Avielle' }}
         />
         <Stack.Screen
           name="Home"
@@ -53,7 +52,7 @@ const App: () => Node = () => {
         <Stack.Screen
           name="Profile"
           component={Profile}
-          options={{ title: 'Profilebb' }}
+          options={{ title: 'Profile' }}
         />
       </Stack.Navigator>
     </NavigationContainer>    

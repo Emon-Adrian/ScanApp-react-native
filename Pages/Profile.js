@@ -5,6 +5,7 @@ import {
     StyleSheet
   } from 'react-native';
   import AsyncStorage from '@react-native-async-storage/async-storage';
+  import tw from 'twrnc';
 
 const Profile = () => {
 
@@ -31,10 +32,12 @@ const Profile = () => {
 
   return (
     <View style={styles.body}>
-        <Text style={styles.text}>Welcome!</Text>
-        <Text>Name:{user.name}</Text>
-        <Text>Telephone: {user.telephone}</Text>
-        <Text>Pin:{user.pin}</Text>
+        <Text style={tw`bg-white p-2 text-black rounded-full mb-5 text-xl text-center italic`}>Welcome!</Text>
+       <View style={tw`text-right`}>
+         <Text style={tw`border-b-2 border-slate-50 text-lg`}>Name:  {user.name}</Text>
+         <Text style={tw`border-b-2 border-slate-50 text-lg`} >Telephone: {user.telephone}</Text>
+         <Text style={tw`border-b-2 border-slate-50 text-lg`} >Pin:  {user.pin}</Text>
+        </View> 
     </View>
   )
 }
@@ -47,8 +50,5 @@ const styles = StyleSheet.create({
    alignItems: 'center',
    justifyContent: 'center',
    backgroundColor: '#73A9AD',
-   },
-   text:{
-    textAlign: 'right',
    }
 })
